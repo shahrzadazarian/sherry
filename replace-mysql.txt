@@ -1,0 +1,8 @@
+set SQL_SAFE_UPDATES = 0;
+select * from serial_director;
+select * from tbl_video_on_demand;
+UPDATE tbl_episode
+SET 
+    thumbNail = REPLACE(thumbNail,
+        'http://armaghan.tv:8008/',
+        'http://cdn.nobino.ir/');
