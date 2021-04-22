@@ -14,4 +14,8 @@ git branch -M main
 git push -u origin main
 
 
-
+#when you have a remote and add new project 
+git add project_name
+git commit -m "comment"
+git branch -M knowlege 
+git push -u origin knowlege 
