@@ -1,0 +1,3 @@
+select  TO_CHAR(insertdate, 'YYYY-MM-DD HH24:MI:SS')
+as INSERTDATE ,originator ,number_ as destination , smsunit , operator ,status , to_char(content) as content
+from tbl_mtdestination where insertdate between '21-NOV-20 12.00.0 AM' and '20-DEC-20 11.59.59 PM' and originator='50004012';
