@@ -1,0 +1,25 @@
+ #yum install chrony -y
+ #cat  /etc/chrony.conf
+http ://www.pool.ntp.org/join.html
+(pool 0.europe.pool.ntp.org iburst
+
+record the rate at which the system clock gains/losses time 
+(driftfile /var/lib/chrony/drift)
+
+if its offset is larger than 1 second 
+(makestep 1.0.3)
+
+specify file containing keys for NTP authentication
+(keyfile /etc/chroy.keys)
+
+#chronyd -q 'server 0.europe.pool.ntp.org iburst'
+
+# systemctl start chronyd
+# systemctl enable chronyd
+
+#chronyc sourcestats -v
+# sed -i "s/#local stratum 10/local stratum 10/g" /etc/chrony.conf
+# sed -i "s/#allow 192.168.0.0\/16/allow 192.168.0.0\/16/" /etc/chrony.conf
+# systemctl restart chronyd ; watch chronyc tracking
+# firewall-cmd --add-service=ntp –permanent
+# firewall-cmd --reload
